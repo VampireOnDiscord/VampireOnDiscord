@@ -20,9 +20,8 @@ underground = false
 local txt = game:GetService("TextService")      
 local TweenService = game:GetService("TweenService")      
 function library:Tween(...) TweenService:Create(...):Play() end      
-local cfglocation = "dripcfg/"      
-makefolder("dripcfg")      
-
+local cfglocation = "cozgentcfg/"      
+makefolder("cozgentcfg")      
 
 
 -- caching      
@@ -4573,7 +4572,7 @@ for i,v in ipairs(AllWeapons) do
 	end      
 end      
 
-makefolder("driplua")      
+makefolder("cozgentlua")      
 
 
 RunService.RenderStepped:Wait()      
