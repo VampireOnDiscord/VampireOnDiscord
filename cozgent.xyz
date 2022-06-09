@@ -1,16 +1,15 @@
-wait(0.1)game.StarterGui:SetCore("SendNotification",{Title="cozgent.xyz",Text="cozgent.xyz Successfully loaded!",Duration=7})
-getgenv().values = {}CozGent
+getgenv().values = {}
 local library = loadstring(game:HttpGet'https://raw.githubusercontent.com/CatzCode/PikaHub/main/Libraries/UI/bruh.lua')()
-library:CreateWatermark("Cozgent.xyz|In Dev")
-library.theme.accentcolor = Color1.fromRGB(0, 0, 0)
-library.theme.accentcolor2 = Color2.fromRGB(0, 0, 0)
+library:CreateWatermark("cozgent.xyz| In Dev")
+library.theme.accentcolor = Color3.fromRGB(0, 0, 0)
+library.theme.accentcolor2 = Color3.fromRGB(0, 0, 0)
 library.theme.topheight = 42
-library.theme.TextColor = Color5.fromRGB(0, 0, 0)
+library.theme.TextColor = Color3.fromRGB(0, 0, 0)
 
 
 local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quenty/NevermoreEngine/version2/Modules/Shared/Events/Signal.lua"))()
 
-print("cozgent.xyz")
+print("Cozgent.xyz")
 getgenv().values = {}       
 local library = {}      
 local Signal = loadstring(game:HttpGet("https://raw.githubusercontent.com/Quenty/NevermoreEngine/version2/Modules/Shared/Events/Signal.lua"))()      
@@ -21,8 +20,8 @@ underground = false
 local txt = game:GetService("TextService")      
 local TweenService = game:GetService("TweenService")      
 function library:Tween(...) TweenService:Create(...):Play() end      
-local cfglocation = "cozgentcfg/"      
-makefolder("cozgentcfg")      
+local cfglocation = "dripcfg/"      
+makefolder("dripcfg")      
 
 
 
@@ -5847,7 +5846,8 @@ Frame.Size = UDim2.new(1,-20,1,-35)
 Frame.Position = UDim2.new(0,10,0,25)
 
 
-CreateHitElement("Cozgent.xyz Loading...",Color3.new(1,1,0))
+CreateHitElement("Loading cozgent.xyz ...",Color3.new(1,1,0))
+
 local griefsector = grief:Sector("griefing","Left")
 griefsector:Element("Button","set health to 1hp",{},function()
 	game.ReplicatedStorage.Events.FallDamage:FireServer(LocalPlayer.Character.Humanoid.Health-1)
@@ -8008,4 +8008,4 @@ for _,Player in pairs(Players:GetPlayers()) do
 		end      
 	end      
 end      
-CreateHitElement("Success!",Color3.new(0,1,0))
+CreateHitElement("Loaded!",Color3.new(0,1,0))
