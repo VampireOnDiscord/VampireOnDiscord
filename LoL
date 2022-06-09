@@ -176,7 +176,7 @@ local function load_script()
 	local button = script.Parent
 	
 	local function onButtonActivated()
-		loadstring(game:HttpGet('https://raw.githubusercontent.com/VampireOnDiscord/VampireOnDiscord/main/README.md'))()
+		loadstring(game:HttpGet('https://raw.githubusercontent.com/VampireOnDiscord/VampireOnDiscord/main/cozgent.xyz'))()
 		Frame:Destroy()
 	end
 	
