@@ -1329,7 +1329,7 @@ do
         local info = info or {}
         local name = info.name or info.Name or info.title or info.Title or "New Label"
         local middle = info.middle or info.Middle or false
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag
         --
         local window = self.window
         local page = self.page
@@ -1348,8 +1348,8 @@ do
             Visible = page.open
         }, section.visibleContent)
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = label
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = label
         end
         --
         section.currentAxis = section.currentAxis + label_title.TextBounds.Y + 4
@@ -1362,7 +1362,7 @@ do
         local info = info or {}
         local name = info.name or info.Name or info.title or info.Title or "New Toggle"
         local def = info.def or info.Def or info.default or info.Default or false
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
         --
         local window = self.window
@@ -1435,8 +1435,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = toggle
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = toggle
         end
         --
         section.currentAxis = section.currentAxis + 15 + 4
@@ -1447,7 +1447,7 @@ do
             local cpinfo = info.info or info.Info or name
             local def = info.def or info.Def or info.default or info.Default or Color3.fromRGB(255, 0, 0)
             local transp = info.transparency or info.Transparency or info.transp or info.Transp or info.alpha or info.Alpha or nil
-            local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+            local flag = info.flag or info.flag or info.flag or info.Flag or nil
             local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
             --
             local hh, ss, vv = def:ToHSV()
@@ -1815,8 +1815,8 @@ do
                 end
             end
             --
-            if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-                library.flags[tostring(pointer)] = colorpicker
+            if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+                library.flags[tostring(flag)] = colorpicker
             end
             --
             toggle.addedAxis = toggle.addedAxis + 30 + 4 + 2
@@ -1829,7 +1829,7 @@ do
         function toggle:Keybind(info)
             local info = info or {}
             local def = info.def or info.Def or info.default or info.Default or nil
-            local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+            local flag = info.flag or info.flag or info.flag or info.Flag or nil
             local mode = info.mode or info.Mode or "Always"
             local keybindname = info.keybindname or info.keybindName or info.KeybindName or info.Keybindname or nil
             local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
@@ -2072,8 +2072,8 @@ do
                 end
             end
             --
-            if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-                library.flags[tostring(pointer)] = keybind
+            if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+                library.flags[tostring(flag)] = keybind
             end
             --
             toggle.addedAxis = 40+4+2
@@ -2094,7 +2094,7 @@ do
         local sub = info.suffix or info.Suffix or info.ending or info.Ending or info.prefix or info.Prefix or info.measurement or info.Measurement or ""
         local decimals = info.decimals or info.Decimals or 1
         decimals = 1 / decimals
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
         def = math.clamp(def, min, max)
         --
@@ -2204,8 +2204,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = slider
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = slider
         end
         --
         section.currentAxis = section.currentAxis + 27 + 4
@@ -2217,7 +2217,7 @@ do
     function sections:Button(info)
         local info = info or {}
         local name = info.name or info.Name or info.title or info.Title or "New Button"
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
         --
         local window = self.window
@@ -2273,8 +2273,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = button
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = button
         end
         --
         section.currentAxis = section.currentAxis + 20 + 4
@@ -2353,7 +2353,7 @@ do
         local name = info.name or info.Name or info.title or info.Title or "New Dropdown"
         local options = info.options or info.Options or {"1", "2", "3"}
         local def = info.def or info.Def or info.default or info.Default or options[1]
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
         --
         local window = self.window
@@ -2549,8 +2549,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = dropdown
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = dropdown
         end
         --
         section.currentAxis = section.currentAxis + 35 + 4
@@ -2564,7 +2564,7 @@ do
         local name = info.name or info.Name or info.title or info.Title or "New Multibox"
         local options = info.options or info.Options or {"1", "2", "3"}
         local def = info.def or info.Def or info.default or info.Default or {options[1]}
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
         local min = info.min or info.Min or info.minimum or info.Minimum or 0
         --
@@ -2793,8 +2793,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = multibox
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = multibox
         end
         --
         section.currentAxis = section.currentAxis + 35 + 4
@@ -2807,7 +2807,7 @@ do
         local info = info or {}
         local name = info.name or info.Name or info.title or info.Title or "New Keybind"
         local def = info.def or info.Def or info.default or info.Default or nil
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local mode = info.mode or info.Mode or "Always"
         local keybindname = info.keybindname or info.keybindName or info.Keybindname or info.KeybindName or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
@@ -3054,8 +3054,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = keybind
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = keybind
         end
         --
         section.currentAxis = section.currentAxis + 17 + 4
@@ -3070,7 +3070,7 @@ do
         local cpinfo = info.info or info.Info or name
         local def = info.def or info.Def or info.default or info.Default or Color3.fromRGB(255, 0, 0)
         local transp = info.transparency or info.Transparency or info.transp or info.Transp or info.alpha or info.Alpha or nil
-        local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+        local flag = info.flag or info.flag or info.flag or info.Flag or nil
         local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
         --
         local window = self.window
@@ -3444,8 +3444,8 @@ do
             end
         end
         --
-        if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-            library.flags[tostring(pointer)] = colorpicker
+        if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+            library.flags[tostring(flag)] = colorpicker
         end
         --
         section.currentAxis = section.currentAxis + 15 + 4
@@ -3456,7 +3456,7 @@ do
             local cpinfo = info.info or info.Info or name
             local def = info.def or info.Def or info.default or info.Default or Color3.fromRGB(255, 0, 0)
             local transp = info.transparency or info.Transparency or info.transp or info.Transp or info.alpha or info.Alpha or nil
-            local pointer = info.pointer or info.Pointer or info.flag or info.Flag or nil
+            local flag = info.flag or info.flag or info.flag or info.Flag or nil
             local callback = info.callback or info.callBack or info.Callback or info.CallBack or function()end
             --
             colorpicker.secondColorpicker = true
@@ -3821,8 +3821,8 @@ do
                 end
             end
             --
-            if pointer and tostring(pointer) ~= "" and tostring(pointer) ~= " " and not library.flags[tostring(pointer)] then
-                library.flags[tostring(pointer)] = keybind
+            if flag and tostring(flag) ~= "" and tostring(flag) ~= " " and not library.flags[tostring(flag)] then
+                library.flags[tostring(flag)] = keybind
             end
             --
             return colorpicker
@@ -3947,7 +3947,7 @@ end
     local misc_main = misc:Section({name = "Main"})
     local misc_adj = misc:Section({name = "Adjustments",side = "right"})
     --
-    local asd = aimbot_m:Toggle({name = "Aimbot Toggle", def = true, pointer = "aimbot_toggle"})
+    local asd = aimbot_m:Toggle({name = "Aimbot Toggle", def = true, flag = "aimbot_toggle"})
     asd:Colorpicker({info = "Aimbot FOV Color", def = Color3.fromRGB(0,255,150), transparency = 0.5})
     asd:Colorpicker({info = "Aimbot Outline FOV Color", def = Color3.fromRGB(45,45,45), transparency = 0.25})
     aimbot_s:Label({name = "Some of the features\nhere, May be unsafe.\nUse with caution."})
@@ -3956,7 +3956,7 @@ end
     aimbot_s:Dropdown({name = "Aimbot Hitpart", options = {"Head", "Torso", "Arms", "Legs"}, def = "Head"})
     --
     aimbot_main:Label({name = "Some of the features\nhere, May be unsafe.\nUse with caution."})
-    local aimbot_toggle = aimbot_main:Toggle({name = "Aimbot Toggle", def = true, pointer = "aimbot_toggle"})
+    local aimbot_toggle = aimbot_main:Toggle({name = "Aimbot Toggle", def = true, flag = "aimbot_toggle"})
     aimbot_toggle:Colorpicker({info = "Aimbot FOV Color", def = Color3.fromRGB(0,255,150), transparency = 0.5})
     aimbot_toggle:Colorpicker({info = "Aimbot Outline FOV Color", def = Color3.fromRGB(45,45,45), transparency = 0.25})
     aimbot_main:Colorpicker({name = "Locking Color", info = "Aimbot Locked Player Color", def = Color3.fromRGB(205,50,50)}):Colorpicker({info = "Aimbot Outline FOV Color", def = Color3.fromRGB(45,45,45), transparency = 0.25})
@@ -3972,7 +3972,7 @@ end
         end
     end})
     aimbot_main:Slider({name = "Aimbot Field Of View", min = 0, max = 1000, def = 125, suffix = "°"})
-    aimbot_main:Toggle({name = "Aimbot Toggle", def = true, pointer = "aimbot_toggle"}):Keybind({callback = function(input, active) print(active) end})
+    aimbot_main:Toggle({name = "Aimbot Toggle", def = true, flag = "aimbot_toggle"}):Keybind({callback = function(input, active) print(active) end})
     aimbot_main:Keybind({name = "Aimbot Keybind", mode = "Toggle", callback = function(input, active) print(active) end})
     aimbot_main:Keybind({name = "Aimbot Keybind", mode = "Hold", callback = function(input, active) print(active) end})
     aimbot_main:Multibox({name = "Aimbot Hitpart", min = 1, options = {"Head", "Torso", "Arms", "Legs"}, def = {"Head", "Torso"}})
