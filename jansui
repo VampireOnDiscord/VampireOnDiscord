@@ -2446,16 +2446,15 @@ function library:Close()
 end
 
 function library:Init()
-    if self.hasInit then return end
-    self.hasInit = true
-
-    self.base = library:Create("ScreenGui", {IgnoreGuiInset = true, ZIndexBehavior = Enum.ZIndexBehavior.Global})
-    if runService:IsStudio() then
-        self.base.Parent = script.Parent.Parent
-    elseif syn then
-        pcall(function() self.base.RobloxLocked = true end)
-        self.base.Parent = game:GetService"CoreGui"
-    end
+	if self.hasInit then
+		return
+	end
+	self.hasInit = true
+	self.base = library:Create("ScreenGui", {
+		IgnoreGuiInset = true
+	})
+	
+		self.base.Parent = game:GetService"CoreGui"
 
     self.main = self:Create("ImageButton", {
         AutoButtonColor = false,
